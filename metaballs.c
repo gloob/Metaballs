@@ -13,7 +13,8 @@
 
 //#include <pspkernel.h>
 
-#include "cube.h"
+//#include "cube.h"
+#include "particle.h"
 
 #define PSP_WIDTH (480)
 #define PSP_HEIGHT (272)
@@ -24,15 +25,13 @@ static GLboolean rotateZ = GL_FALSE;
 
 static GLfloat deltaX = 0.0f;
 static GLfloat deltaY = 0.0f;
-static GLfloat deltaZ = -50.0f;
-
-static GLfloat stepX = 5.0f;
-static GLfloat stepY = 5.0f;
-static GLfloat stepZ = 5.0f;
+static GLfloat deltaZ = -75.0f;
 
 static unsigned char index = 0;
 
 static cube cube0;
+static particle particles[1];
+static float isovalue = 100.0f;
 
 static void setupGL(int w, int h)
 {
@@ -155,7 +154,8 @@ static void display2() {
 	glRotatef( yRot, 0.0f, 1.0f, 0.0f );
 	glRotatef( zRot, 0.0f, 0.0f, 1.0f ); /* Rotate. */
 
-	printCube( cube0, index );
+	//printCube( cube0, index );
+	printParticle(particles, isovalue);
 
 	glutSwapBuffers();
 	glutPostRedisplay();
@@ -214,7 +214,9 @@ void joystick (unsigned int buttonMask, int x, int y, int z)
 
 int main(int argc, char *argv[]) {
 	
-	initCube( &cube0 );
+	initCube(&cube0, 30.0f, 30.0f, 30.0f);
+		
+	setParticle(particles, 50.0f);
 
 	glutInit(&argc, argv);
 	glutCreateWindow(__FILE__);

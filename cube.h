@@ -38,6 +38,6 @@ typedef struct {
 } cube;
 
 
-void initCube(cube *c);
-void printCube(cube c, unsigned char i);
+void initCube(cube *, float, float, float);
+void printCube(cube, unsigned char);
 

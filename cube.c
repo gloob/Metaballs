@@ -12,7 +12,7 @@
 #include "cube.h"
 #include "mcdef.h"
 
-void initCube(cube* cube0)
+void initCube(cube* cube0, float x, float y, float z)
 {
 	int i;
 
@@ -20,14 +20,14 @@ void initCube(cube* cube0)
 		cube0->vertexs[i].sel = FALSE;
 	}
 
-	cube0->vertexs[0].x = -POS; cube0->vertexs[0].y = -POS; cube0->vertexs[0].z =  POS;
-	cube0->vertexs[1].x =  POS; cube0->vertexs[1].y = -POS; cube0->vertexs[1].z =  POS;
-	cube0->vertexs[2].x =  POS; cube0->vertexs[2].y = -POS; cube0->vertexs[2].z = -POS;
-	cube0->vertexs[3].x = -POS; cube0->vertexs[3].y = -POS; cube0->vertexs[3].z = -POS;
-	cube0->vertexs[4].x = -POS; cube0->vertexs[4].y =  POS; cube0->vertexs[4].z =  POS;
-	cube0->vertexs[5].x =  POS; cube0->vertexs[5].y =  POS; cube0->vertexs[5].z =  POS;
-	cube0->vertexs[6].x =  POS; cube0->vertexs[6].y =  POS; cube0->vertexs[6].z = -POS;
-	cube0->vertexs[7].x = -POS; cube0->vertexs[7].y =  POS; cube0->vertexs[7].z = -POS;
+	cube0->vertexs[0].x = -x; cube0->vertexs[0].y = -y; cube0->vertexs[0].z =  z;
+	cube0->vertexs[1].x =  x; cube0->vertexs[1].y = -y; cube0->vertexs[1].z =  z;
+	cube0->vertexs[2].x =  x; cube0->vertexs[2].y = -y; cube0->vertexs[2].z = -z;
+	cube0->vertexs[3].x = -x; cube0->vertexs[3].y = -y; cube0->vertexs[3].z = -z;
+	cube0->vertexs[4].x = -x; cube0->vertexs[4].y =  y; cube0->vertexs[4].z =  z;
+	cube0->vertexs[5].x =  x; cube0->vertexs[5].y =  y; cube0->vertexs[5].z =  z;
+	cube0->vertexs[6].x =  x; cube0->vertexs[6].y =  y; cube0->vertexs[6].z = -z;
+	cube0->vertexs[7].x = -x; cube0->vertexs[7].y =  y; cube0->vertexs[7].z = -z;
 
 	cube0->edges[0].a = &cube0->vertexs[0]; cube0->edges[0].b = &cube0->vertexs[1];
 	cube0->edges[1].a = &cube0->vertexs[1]; cube0->edges[1].b = &cube0->vertexs[2];
@@ -90,7 +90,7 @@ void printCube(cube cube0, unsigned char index)
 			glColor3f( 0.0f, 1.0f, 0.0f );
 		glVertex3f( cube0.vertexs[i].x, cube0.vertexs[i].y, cube0.vertexs[i].z );
 	}
-
+	
 	glEnd();
 
 	glBegin( GL_TRIANGLES );
