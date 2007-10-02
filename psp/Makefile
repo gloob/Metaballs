@@ -1,5 +1,5 @@
 TARGET = metaballs
-OBJS = metaballs.o particle.o cube.o psp/callbacks.o
+OBJS = ../metaballs.o ../particle.o ../cube.o callbacks.o
 
 INCDIR =
 CFLAGS = -O2 -G0 -Wall
