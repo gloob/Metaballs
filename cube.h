@@ -1,9 +1,9 @@
 /*
  * Header file for cube functions & structures.
  *
- * GlooB / TsT
+ * gloob / TsT
  *
- * v 0.1							
+ * $Id$							
  *
  */
 

@@ -1,5 +1,5 @@
 TARGET = metaballs
-OBJS = metaballs.o cube.o callbacks.o
+OBJS = metaballs.o particle.o cube.o callbacks.o
 
 INCDIR =
 CFLAGS = -O2 -G0 -Wall

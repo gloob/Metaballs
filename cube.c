@@ -1,9 +1,9 @@
 /*
  * 
  *
- * GlooB / TsT
+ * gloob / TsT
  *
- * v 0.1							
+ * $Id$							
  *
  */
 
