@@ -18,16 +18,6 @@ $(TARGET): $(OBJS)
 %.o: ../%.c
 	$(CC) -c $(CFLAGS) -o $@ $<
 
-
-#particle.o: ../particle.c ../particle.h
-#	$(CC) -c $(CFLAGS) -o $@ ../particle.c
-
-#cube.o: ../cube.c
-#	$(CC) -c $(CFLAGS) -o $@ ../cube.c
-
-#metaballs.o: ../metaballs.c
-#	$(CC) -c $(CFLAGS) -o $@ ../metaballs.c
-
 clean:
 	-rm -f $(TARGET) $(OBJS)
 
