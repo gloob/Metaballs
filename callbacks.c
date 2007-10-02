@@ -15,7 +15,7 @@
 #include <string.h>
 #include <time.h>
 
-PSP_MODULE_INFO("TEst", 0, 1, 1);
+PSP_MODULE_INFO("Fucking siette", 0, 1, 1);
 PSP_MAIN_THREAD_ATTR(THREAD_ATTR_USER);
 
 static int exitRequest = 0;

@@ -11,7 +11,7 @@ LDFLAGS =
 LIBS = -lglut -lGLU -lGL -lm -lc -lpsputility -lpspdebug -lpspge -lpspdisplay -lpspctrl -lpspsdk -lpspvfpu -lpsplibc -lpspuser -lpspkernel -lpsprtc
 
 EXTRA_TARGETS = EBOOT.PBP
-PSP_EBOOT_TITLE = Metaballs [TsT]
+PSP_EBOOT_TITLE = Metaballs [gloob/TsT]
 
 PSPSDK=$(shell psp-config --pspsdk-path)
 include $(PSPSDK)/lib/build.mak

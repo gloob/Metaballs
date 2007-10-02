@@ -28,7 +28,8 @@ static GLfloat stepX = 5.0f;
 static GLfloat stepY = 5.0f;
 static GLfloat stepZ = 5.0f;
 
-static unsigned char index = 123;
+static unsigned char index = 0;
+
 static cube cube0;
 
 static void setupGL( GLsizei w, GLsizei h)

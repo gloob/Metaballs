@@ -3,7 +3,7 @@
  *
  * GlooB / TsT
  *
- * v 0.7beta							
+ * v 0.1							
  *
  */
 
@@ -33,8 +33,8 @@ typedef struct {
 } edge;
 
 typedef struct {
-	vertex vertexs[8];
-	edge edges[12];
+	vertex vertexs[NUM_CUBE_VERTEX];
+	edge edges[NUM_CUBE_EDGES];
 } cube;
 
 

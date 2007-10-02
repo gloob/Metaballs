@@ -1,3 +1,12 @@
+/*
+ * 
+ *
+ * GlooB / TsT
+ *
+ * v 0.1							
+ *
+ */
+
 #include <GL/gl.h>
 #include <GL/glut.h>
 
@@ -8,7 +17,7 @@ void initCube(cube* cube0)
 {
 	int i;
 
-	for(i=0;i<8;i++) {
+	for(i=0;i<NUM_CUBE_VERTEX;i++) {
 		cube0->vertexs[i].sel = FALSE;
 	}
 
@@ -44,7 +53,7 @@ void printCube(cube cube0, unsigned char index)
 	//glPointSize( 1.0f );
 	//glDisable( GL_POINT_SMOOTH );
 	
-	/*
+	
 	glBegin( GL_LINES );
 
 	for(i=0;i<12;i++) {
@@ -68,14 +77,15 @@ void printCube(cube cube0, unsigned char index)
 	}
 
 	glEnd();
-*/
+
 	//glPointSize( 10.0f );
 	//glEnable( GL_POINT_SMOOTH );
 
 	glBegin( GL_POINTS );
+	glColor3f( 1.0f, 0.0f, 0.0f );
 
-	for(i=0;i<8;i++) {
-		if( cube0.vertexs[i].sel ) 
+	for(i = 0; i < NUM_CUBE_VERTEX; i++) {
+		if( cube0.vertexs[i].sel )
 			glColor3f( 1.0f, 0.0f, 0.0f );
 		else
 			glColor3f( 0.0f, 1.0f, 0.0f );
