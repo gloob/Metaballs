@@ -7,9 +7,10 @@
  *
  */
 
-#include <GL/gl.h>
+
 #include <stdlib.h>
 #include <stdio.h>
+#include "gl.h"
 
 #include "particle.h"
 

@@ -8,8 +8,10 @@
  */
 
 #include <stdlib.h>
-#include <GL/glut.h>
-#include <pspkernel.h>
+
+#include "gl.h"
+
+//#include <pspkernel.h>
 
 #include "cube.h"
 
@@ -32,7 +34,7 @@ static unsigned char index = 0;
 
 static cube cube0;
 
-static void setupGL( GLsizei w, GLsizei h)
+static void setupGL(int w, int h)
 {
 	
 	GLfloat fAspect;
@@ -86,12 +88,12 @@ static void setupGL( GLsizei w, GLsizei h)
 static
 void reshape (int w, int h)
 {
-	//glViewport(0, 0, w, h);
-	//glMatrixMode(GL_PROJECTION);
-	//glLoadIdentity();
-	//glOrtho(-2, 2, -2, 2, -2, 2);
-	//glMatrixMode(GL_MODELVIEW);
-	//glLoadIdentity();
+	glViewport(0, 0, w, h);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	glOrtho(-2, 2, -2, 2, -2, 2);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
 }
 
 static void display() {
@@ -179,7 +181,8 @@ void keydown (unsigned char key, int x, int y)
 	case 's': // select	
 		break;
 	case 'a': //startbutton
-		sceKernelExitGame();
+		exit(1);
+		//sceKernelExitGame();
 		break;
 	default:
 		;
@@ -218,7 +221,8 @@ int main(int argc, char *argv[]) {
 	glutKeyboardFunc(keydown);
 	glutKeyboardUpFunc(keyup);
 	glutJoystickFunc(joystick, 0);
-	glutReshapeFunc(reshape);
+	//glutReshapeFunc(reshape);
+	glutReshapeFunc(setupGL);
 	glutDisplayFunc(display2);
 
 	setupGL(PSP_WIDTH, PSP_HEIGHT);

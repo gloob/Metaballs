@@ -7,9 +7,8 @@
  *
  */
 
-#include <GL/gl.h>
-#include <GL/glut.h>
 
+#include "gl.h"
 #include "cube.h"
 #include "mcdef.h"
 
