@@ -1,5 +1,5 @@
 TARGET = metaballs
-OBJS = metaballs.o particle.o cube.o
+OBJS = metaballs.o particle.o cube.o vertex.o
 
 INCDIR = 
 CC=gcc
@@ -17,6 +17,9 @@ $(TARGET): $(OBJS)
 
 %.o: ../%.c
 	$(CC) -c $(CFLAGS) -o $@ $<
+
+%.o: ../%.cpp
+	$(CC) -c $(CXXFLAGS) -o $@ $<
 
 clean:
 	-rm -f $(TARGET) $(OBJS)

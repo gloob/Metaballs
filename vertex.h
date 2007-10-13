@@ -8,14 +8,14 @@
  */
 
 
-typedef struct {
-	GLfloat x;
-	GLfloat y;
-	GLfloat z;
-	GLboolean sel;
-} vertex;
-
-
-void initCube(cube *, float, float, float);
-void printCube(cube, unsigned char);
-
+class Vertex {
+	
+public:
+	float x, y, z;
+	int	sel;
+	
+	Vertex(): x(0.0f), y(0.0f), z(0.0f) {};
+	Vertex(float vx, float vy, float vz): x(vx), y(vy), z(vz) {};
+	~Vertex();
+	void display();
+};
