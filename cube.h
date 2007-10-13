@@ -20,7 +20,7 @@
 
 #define POS 10
 
-/*
+
 typedef struct {
 	GLfloat x;
 	GLfloat y;
@@ -33,10 +33,10 @@ typedef struct {
 	vertex* a;
 	vertex* b;
 } edge;
-*/
+
 
 typedef struct {
-	Vertex vertexs[NUM_CUBE_VERTEX];
+	vertex vertexs[NUM_CUBE_VERTEX];
 	edge edges[NUM_CUBE_EDGES];
 } cube;
 
