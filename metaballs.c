@@ -221,7 +221,7 @@ int main(int argc, char *argv[]) {
 	setParticle(particles, 50.0f);
 
 	glutInit(&argc, argv);
-	glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB); // TODO: test on psp
+	glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB); // TODO: test on psp
 	glutInitWindowSize(SCREEN_WIDTH, SCREEN_HEIGHT); // TODO: test on psp
 	glutInitWindowPosition(0,0); // TODO: test on psp
 	glutCreateWindow(__FILE__);
