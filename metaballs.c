@@ -11,13 +11,15 @@
 
 #include "gl.h"
 
-//#include <pspkernel.h>
-
-//#include "cube.h"
 #include "particle.h"
 
-#define PSP_WIDTH (480)
-#define PSP_HEIGHT (272)
+#ifdef __PSP__
+  #define SCREEN_WIDTH 480
+  #define SCREEN_HEIGHT 272
+#else
+  #define SCREEN_WIDTH 800
+  #define SCREEN_HEIGHT 600
+#endif
 
 static GLboolean rotateX = GL_FALSE;
 static GLboolean rotateY = GL_FALSE;
@@ -87,7 +89,7 @@ static void setupGL(int w, int h)
 static
 void reshape (int w, int h)
 {
-	glViewport(0, 0, w, h);
+	glViewport(0, 0, 800, 600);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glOrtho(-2, 2, -2, 2, -2, 2);
@@ -219,15 +221,18 @@ int main(int argc, char *argv[]) {
 	setParticle(particles, 50.0f);
 
 	glutInit(&argc, argv);
+	glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB); // TODO: test on psp
+	glutInitWindowSize(SCREEN_WIDTH, SCREEN_HEIGHT); // TODO: test on psp
+	glutInitWindowPosition(0,0); // TODO: test on psp
 	glutCreateWindow(__FILE__);
 	glutKeyboardFunc(keydown);
 	glutKeyboardUpFunc(keyup);
 	glutJoystickFunc(joystick, 0);
 	//glutReshapeFunc(reshape);
-	glutReshapeFunc(setupGL);
+	//glutReshapeFunc(setupGL);
 	glutDisplayFunc(display2);
 
-	setupGL(PSP_WIDTH, PSP_HEIGHT);
+	setupGL(SCREEN_WIDTH, SCREEN_HEIGHT);
 
 	glutMainLoop();
 

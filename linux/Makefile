@@ -9,7 +9,7 @@ ASFLAGS = $(CFLAGS)
 
 LIBDIR =
 LDFLAGS = 
-LIBS = -lglut -lglu -lGL -lm
+LIBS = -lglut -lGL -lGLU
 
 $(TARGET): $(OBJS)
 	$(CC) -o $@ $(OBJS) $(LIBS)
