@@ -184,6 +184,7 @@ void keydown (unsigned char key, int x, int y)
 		break;
 	case 'a': //startbutton
 		exit(1);
+		//System::shutdown();
 		//sceKernelExitGame();
 		break;
 	default:
