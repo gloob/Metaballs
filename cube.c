@@ -12,7 +12,7 @@
 #include "cube.h"
 #include "mcdef.h"
 
-void initCube(cube* cube0, float x, float y, float z)
+void initCube2(cube* cube0, float x, float y, float z)
 {
 	int i;
 
@@ -41,6 +41,46 @@ void initCube(cube* cube0, float x, float y, float z)
 	cube0->edges[9].a = &cube0->vertexs[1]; cube0->edges[9].b = &cube0->vertexs[5];
 	cube0->edges[10].a = &cube0->vertexs[2]; cube0->edges[10].b = &cube0->vertexs[6];
 	cube0->edges[11].a = &cube0->vertexs[3]; cube0->edges[11].b = &cube0->vertexs[7];
+
+	for (i = 0; i < NUM_CUBE_VERTEX; i++) {
+		printf("cube0: (%f,%f,%f)\n", cube0->vertexs[i].x,cube0->vertexs[i].y,cube0->vertexs[i].z);
+	}
+
+}
+
+void initCube(cube* cube0, float x, float y, float z)
+{
+        int i;
+
+        for(i=0;i<NUM_CUBE_VERTEX;i++) {
+                cube0->vertexs[i].sel = FALSE;
+        }
+
+        cube0->vertexs[0].x = -x; cube0->vertexs[0].y = -y; cube0->vertexs[0].z = -z;
+        cube0->vertexs[1].x = -x; cube0->vertexs[1].y = -y; cube0->vertexs[1].z =  z;
+        cube0->vertexs[2].x = -x; cube0->vertexs[2].y =  y; cube0->vertexs[2].z = -z;
+        cube0->vertexs[3].x = -x; cube0->vertexs[3].y =  y; cube0->vertexs[3].z =  z;
+        cube0->vertexs[4].x =  x; cube0->vertexs[4].y = -y; cube0->vertexs[4].z = -z;
+        cube0->vertexs[5].x =  x; cube0->vertexs[5].y = -y; cube0->vertexs[5].z =  z;
+        cube0->vertexs[6].x =  x; cube0->vertexs[6].y =  y; cube0->vertexs[6].z = -z;
+        cube0->vertexs[7].x =  x; cube0->vertexs[7].y =  y; cube0->vertexs[7].z =  z;
+
+        cube0->edges[0].a = &cube0->vertexs[0]; cube0->edges[0].b = &cube0->vertexs[1];
+        cube0->edges[1].a = &cube0->vertexs[1]; cube0->edges[1].b = &cube0->vertexs[2];
+        cube0->edges[2].a = &cube0->vertexs[2]; cube0->edges[2].b = &cube0->vertexs[3];
+        cube0->edges[3].a = &cube0->vertexs[3]; cube0->edges[3].b = &cube0->vertexs[0];
+        cube0->edges[4].a = &cube0->vertexs[4]; cube0->edges[4].b = &cube0->vertexs[5];
+        cube0->edges[5].a = &cube0->vertexs[5]; cube0->edges[5].b = &cube0->vertexs[6];
+        cube0->edges[6].a = &cube0->vertexs[6]; cube0->edges[6].b = &cube0->vertexs[7];
+        cube0->edges[7].a = &cube0->vertexs[7]; cube0->edges[7].b = &cube0->vertexs[4];
+        cube0->edges[8].a = &cube0->vertexs[0]; cube0->edges[8].b = &cube0->vertexs[4];
+        cube0->edges[9].a = &cube0->vertexs[1]; cube0->edges[9].b = &cube0->vertexs[5];
+        cube0->edges[10].a = &cube0->vertexs[2]; cube0->edges[10].b = &cube0->vertexs[6];
+        cube0->edges[11].a = &cube0->vertexs[3]; cube0->edges[11].b = &cube0->vertexs[7];
+
+        for (i = 0; i < NUM_CUBE_VERTEX; i++) {
+                printf("cube0: (%f,%f,%f)\n", cube0->vertexs[i].x,cube0->vertexs[i].y,cube0->vertexs[i].z);
+        }
 
 }
 

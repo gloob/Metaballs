@@ -152,7 +152,7 @@ static void display2() {
     }
 
 	/* Rotate. */
-    glRotatef( xRot, 1.0f, 0.0f, 0.0f );
+	glRotatef( xRot, 1.0f, 0.0f, 0.0f );
 	glRotatef( yRot, 0.0f, 1.0f, 0.0f );
 	glRotatef( zRot, 0.0f, 0.0f, 1.0f ); /* Rotate. */
 
@@ -178,7 +178,7 @@ void keydown (unsigned char key, int x, int y)
 		rotateZ = !rotateZ;
 		break;
 	case 'x':			/* cross button */
-		index += 1;
+		isovalue += 10.0f;
 		break;
 	case 's': // select	
 		break;
@@ -219,7 +219,7 @@ int main(int argc, char *argv[]) {
 	
 	initCube(&cube0, 30.0f, 30.0f, 30.0f);
 		
-	setParticle(particles, 50.0f);
+	setParticle(particles, isovalue);
 
 	glutInit(&argc, argv);
 	glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB); // TODO: test on psp

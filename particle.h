@@ -9,7 +9,7 @@
 
 #include "cube.h"
 
-#define DIV 3
+#define DIV 2
 #define DIV_X DIV
 #define DIV_Y DIV
 #define DIV_Z DIV

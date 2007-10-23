@@ -38,9 +38,9 @@ int setParticle( particle *particles, float isovalue )
 		incY = initY = particles[p].y - (( stepY * DIV_Y ) / 2) + (stepY / 2);
 		incZ = initZ = particles[p].z - (( stepZ * DIV_Z ) / 2) + (stepZ / 2);	
 
-		//printf("* InitX = %f\n", initX);
-		//printf("* InitY = %f\n", initY);
-		//printf("* InitZ = %f\n", initZ);
+		printf("* InitX = %f\n", initX);
+		printf("* InitY = %f\n", initY);
+		printf("* InitZ = %f\n", initZ);
 
 		for(k = 0; k < DIV_Z; k++) {
 			incY = initY;
@@ -50,12 +50,12 @@ int setParticle( particle *particles, float isovalue )
 					particles[p].vertexs[(j*DIV_X)+(k*offset2)+i].x = incX;
 					particles[p].vertexs[(j*DIV_X)+(k*offset2)+i].y = incY;
 					particles[p].vertexs[(j*DIV_X)+(k*offset2)+i].z = incZ;
-					//printf("[%d][%d][%d] (%d) X = %f Y = %f Z = %f\n", i, j, k, (j*DIV_X)+(k*DIV_Y*DIV_X)+i, incX, incY, incZ);
+					printf("[%d][%d][%d] (%d) X = %f Y = %f Z = %f\n", i, j, k, (j*DIV_X)+(k*DIV_Y*DIV_X)+i, incX, incY, incZ);
 
 					total = (particles[p].x - incX) * (particles[p].x - incX) +
 							(particles[p].y - incY) * (particles[p].y - incY) +
 							(particles[p].z - incZ) * (particles[p].z - incZ);
-					//printf("[%d][%d][%d] = %f\n", i, j, k, total);
+					printf("[%d][%d][%d] = %f\n", i, j, k, total);
 					media += total;
 					if( total <= isovalue )
 						particles[p].vertexs[(j*DIV_X)+(k*offset2)+i].sel = GL_TRUE;
@@ -76,9 +76,16 @@ int setParticle( particle *particles, float isovalue )
 	
 	//start cubes
 	int idx = 0;
-	incX = initX = particles[p].x + (( stepX * DIV_X ) / 2) + (stepX / 2);
-	incY = initY = particles[p].y + (( stepY * DIV_Y ) / 2) + (stepY / 2);
-	incZ = initZ = particles[p].z + (( stepZ * DIV_Z ) / 2) + (stepZ / 2);
+	incX = initX = particles[p].x - (( stepX * DIV_X ) / 2) + (stepX / 2);
+	incY = initY = particles[p].y - (( stepY * DIV_Y ) / 2) + (stepY / 2);
+	incZ = initZ = particles[p].z - (( stepZ * DIV_Z ) / 2) + (stepZ / 2);
+
+	printf("* InitX = %f\n", initX);
+	printf("* InitY = %f\n", initY);
+	printf("* InitZ = %f\n", initZ);
+	printf("* stepX  = %f\n", stepX);
+
+
 	for (k = 0; k < DIV_Z-1; k++) {
 		incY = initY;
 		for (j = 0; j < DIV_Y-1; j++) {
@@ -86,11 +93,11 @@ int setParticle( particle *particles, float isovalue )
 			for (i = 0; i < DIV_X-1; i++) {
 				initCube(&particles[p].cubes[idx++], incX, incY, incZ);
 				printf("x: %f, y: %f, z:%f\n", incX, incY, incZ);
-				incZ -= stepZ;
+				incZ += stepZ;
 			}
-			incY -= stepY;
+			incY += stepY;
 		}
-		incX -= stepX;
+		incX += stepX;
 	}
 	return 1;
 }
