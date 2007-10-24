@@ -91,7 +91,7 @@ int setParticle( particle *particles, float isovalue )
 		for (j = 0; j < DIV_Y-1; j++) {
 			incZ = initZ;
 			for (i = 0; i < DIV_X-1; i++) {
-				initCube(&particles[p].cubes[idx++], incX, incY, incZ);
+				initCube(&particles[p].cubes[idx++], incX, incY, incZ, 1.0f);
 				printf("x: %f, y: %f, z:%f\n", incX, incY, incZ);
 				incZ += stepZ;
 			}

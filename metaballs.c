@@ -217,7 +217,7 @@ void joystick (unsigned int buttonMask, int x, int y, int z)
 
 int main(int argc, char *argv[]) {
 	
-	initCube(&cube0, 30.0f, 30.0f, 30.0f);
+	//initCube(&cube0, 30.0f, 30.0f, 30.0f);
 		
 	setParticle(particles, isovalue);
 
