@@ -1,9 +1,19 @@
 /*
- * Mataballs on PSP
+ * Metaballs implementation
  *
- * gloob / TsT
+ * Copyright (c) 2011 Alejandro Leiva <gloob@litio.org>
  *
- * $Id$
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * Author: Alejandro Leiva <gloob@litio.org>
  *
  */
 
@@ -72,9 +82,9 @@ static void setupGL(int w, int h)
 	//glFrontFace ( GL_CW );
 
 	// Activar el Blending.
-//	glEnable( GL_BLEND );
-//	glBlendFunc( GL_SRC_ALPHA, GL_ONE );
-//	glHint( GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST );
+	glEnable( GL_BLEND );
+	glBlendFunc( GL_SRC_ALPHA, GL_ONE );
+	glHint( GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST );
 
 	// Color de pincel.
 	glColor3f( 1.0f, 0.0f, 0.0f );

@@ -1,8 +1,27 @@
+/*
+ * Automatically calculated definitions.
+ *
+ * Copyright (c) 2011 Alejandro Leiva <gloob@litio.org>
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * Author: Alejandro Leiva <gloob@litio.org>
+ *
+ */
+
 // AUTOMATICALLY GENERATED!!
 // Almacena las 256 combinaciones.
 //static int cube_table[NUM_CUBE_PERMS][NUM_CUBE_EDGES];
 //static int edge_table[NUM_CUBE_PERMS]; // 0000 0000 0000 b ( 11 10 9 8 7 6 5 4 3 2 1 0) Edges order
-/* Tabla de permutaciones */
+/* Permutations table */
 static int cube_table[NUM_CUBE_PERMS][NUM_CUBE_EDGES] = {
 	{ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,  },
 	{ 0, 3, 8, -1, -1, -1, -1, -1, -1, -1, -1, -1,  },
