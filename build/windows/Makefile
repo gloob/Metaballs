@@ -15,10 +15,10 @@ LIBS = -lglut32 -lglu32 -lopengl32 -lm
 $(TARGET): $(OBJS)
 	$(CC) -o $@ $(OBJS) $(LIBS)
 
-%.o: ../%.c
+%.o: ../../src/%.c
 	$(CC) -c $(CFLAGS) -o $@ $<
 
-%.o: ../%.cpp
+%.o: ../../src/%.cpp
 	$(CC) -c $(CXXFLAGS) -o $@ $<
 
 clean:
